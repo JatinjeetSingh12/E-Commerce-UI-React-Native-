@@ -1,0 +1,26 @@
+import { View } from 'react-native'
+import React,{FC} from 'react'
+import { Box,Text, Center } from 'native-base'
+
+interface  item {
+    name: string,
+    section: string
+}
+type props = {
+    data:item[]
+}
+const List_Category:FC<props> = ({data}) => {
+  return (
+    <Center>
+      {data.map((item,index)=>{
+        return(
+            <Box my={2} borderBottomWidth={1} w={'90%'} key={index}>
+                <Text width={'100%'} borderWidth={1} size={16} >{item.name}</Text>
+            </Box>
+        )
+      })}
+    </Center>
+  )
+}
+
+export default List_Category
